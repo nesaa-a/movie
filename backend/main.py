@@ -1,7 +1,11 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from fastapi import FastAPI
-from database import Base, engine
-from routers import movies
-from routers import auth
+from backend.database import Base, engine
+from backend.routers import movies
+from backend.routers import auth
 
 Base.metadata.create_all(bind=engine)
 
